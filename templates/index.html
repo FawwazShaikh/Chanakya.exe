@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IKS-Bot — Your guide to the Indian Knowledge System: Vedas, Ayurveda, Yoga, Sanskrit, Jyotisha, and more.">
+    <meta name="theme-color" content="#0B0D1F">
+    <title>IKS-Bot — भारतीय ज्ञान परंपरा सहायक</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/glass.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕉️</text></svg>">
+</head>
+<body>
+
+    <!-- ====== Background Decorations ====== -->
+    <!-- Mandala SVG -->
+    <svg class="bg-mandala" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g opacity="1" stroke="rgba(244,169,75,0.5)" stroke-width="0.5">
+            <!-- Outer rings -->
+            <circle cx="200" cy="200" r="195" />
+            <circle cx="200" cy="200" r="175" />
+            <circle cx="200" cy="200" r="155" />
+            <circle cx="200" cy="200" r="130" />
+            <circle cx="200" cy="200" r="100" />
+            <circle cx="200" cy="200" r="70" />
+            <circle cx="200" cy="200" r="40" />
+            <!-- Radial lines -->
+            <line x1="200" y1="5" x2="200" y2="395" />
+            <line x1="5" y1="200" x2="395" y2="200" />
+            <line x1="62" y1="62" x2="338" y2="338" />
+            <line x1="338" y1="62" x2="62" y2="338" />
+            <!-- Petal arcs (lotus-like) -->
+            <path d="M200 5 Q280 100 200 200 Q120 100 200 5Z" />
+            <path d="M395 200 Q300 280 200 200 Q300 120 395 200Z" />
+            <path d="M200 395 Q120 300 200 200 Q280 300 200 395Z" />
+            <path d="M5 200 Q100 120 200 200 Q100 280 5 200Z" />
+            <!-- Diagonal petals -->
+            <path d="M338 62 Q280 160 200 200 Q300 130 338 62Z" />
+            <path d="M338 338 Q240 280 200 200 Q280 300 338 338Z" />
+            <path d="M62 338 Q120 240 200 200 Q100 270 62 338Z" />
+            <path d="M62 62 Q160 120 200 200 Q120 100 62 62Z" />
+            <!-- Inner diamond -->
+            <rect x="158" y="158" width="84" height="84" transform="rotate(45 200 200)" rx="4" />
+            <!-- Tiny center -->
+            <circle cx="200" cy="200" r="8" fill="rgba(244,169,75,0.3)" />
+        </g>
+    </svg>
+
+    <!-- Secondary mandala -->
+    <svg class="bg-mandala-secondary" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g opacity="1" stroke="rgba(108,99,255,0.4)" stroke-width="0.4">
+            <circle cx="200" cy="200" r="190" />
+            <circle cx="200" cy="200" r="150" />
+            <circle cx="200" cy="200" r="110" />
+            <circle cx="200" cy="200" r="60" />
+            <!-- 12-pointed star -->
+            <polygon points="200,10 218,160 340,62 230,178 395,200 230,222 340,338 218,240 200,390 182,240 60,338 170,222 5,200 170,178 60,62 182,160" />
+        </g>
+    </svg>
+
+    <!-- Floating orbs -->
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+
+    <!-- ====== App Container ====== -->
+    <div class="app-container">
+
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-brand">
+                <div class="header-logo">🕉️</div>
+                <div>
+                    <div class="header-title">IKS-Bot</div>
+                    <div class="header-subtitle">भारतीय ज्ञान परंपरा सहायक</div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="header-btn" id="clear-btn" title="New conversation">🗑️</button>
+            </div>
+        </header>
+
+        <!-- Welcome Screen -->
+        <div class="welcome-screen" id="welcome-screen">
+            <div class="welcome-icon">🪷</div>
+            <h1 class="welcome-title">Namaste! नमस्ते!</h1>
+            <p class="welcome-desc">
+                I'm your guide to the Indian Knowledge System — from the Vedas and Upanishads 
+                to Ayurveda, Yoga, Sanskrit, and classical Indian arts. Ask me anything in 
+                English, Hindi, or Sanskrit.
+            </p>
+            <div class="suggestion-grid">
+                <div class="suggestion-card" data-query="What are the four Vedas and what does each contain?">
+                    <span class="suggestion-emoji">📜</span>
+                    <span class="suggestion-text">What are the four Vedas and what does each contain?</span>
+                </div>
+                <div class="suggestion-card" data-query="Explain the three Doshas in Ayurveda — Vata, Pitta, and Kapha.">
+                    <span class="suggestion-emoji">🌿</span>
+                    <span class="suggestion-text">Explain the three Doshas in Ayurveda</span>
+                </div>
+                <div class="suggestion-card" data-query="What is Patanjali's Ashtanga Yoga? Describe the eight limbs.">
+                    <span class="suggestion-emoji">🧘</span>
+                    <span class="suggestion-text">What is Patanjali's Ashtanga Yoga?</span>
+                </div>
+                <div class="suggestion-card" data-query="पाणिनि की अष्टाध्यायी के बारे में बताइए।">
+                    <span class="suggestion-emoji">🔤</span>
+                    <span class="suggestion-text">पाणिनि की अष्टाध्यायी के बारे में बताइए</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="chat-area" id="chat-area"></div>
+
+        <!-- Sanskrit Keypad (collapsible) -->
+        <div class="keypad-container" id="keypad-container">
+            <div class="keypad-glass"></div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <div class="input-glass-pill">
+                <button class="input-btn btn-mic" id="mic-btn" title="Voice input">
+                    🎙️
+                </button>
+                <button class="input-btn btn-keyboard" id="keypad-toggle" title="Sanskrit keypad">
+                    अ
+                </button>
+                <textarea
+                    class="input-text"
+                    id="chat-input"
+                    placeholder="Ask about Vedas, Ayurveda, Yoga, Sanskrit..."
+                    rows="1"
+                    aria-label="Type your message"
+                ></textarea>
+                <button class="input-btn btn-send" id="send-btn" title="Send message">
+                    ➤
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ====== Scripts ====== -->
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/voice.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sanskritKeypad.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Core
+flask>=3.0
+flask-cors>=4.0
+python-dotenv>=1.0
+
+# LLM Providers
+google-genai>=1.0
+groq>=1.0
+
+# Production
+gunicorn>=22.0
