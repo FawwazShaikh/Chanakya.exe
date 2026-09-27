@@ -4,6 +4,7 @@ Main entry point: serves the UI and handles /chat API calls.
 Supports multiple LLM providers (Groq + Gemini) with automatic fallback.
 """
 
+import os
 import uuid
 from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
@@ -18,8 +19,14 @@ from services.safety_service import SafetyService
 from services.conversation_service import ConversationService
 from services.llm.llm_service import LLMService
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # --- Initialize Flask ---
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    template_folder=os.path.join(BASE_DIR, "templates"),
+    static_folder=os.path.join(BASE_DIR, "static"),
+)
 app.secret_key = uuid.uuid4().hex
 CORS(app)
 
