@@ -1,4 +1,4 @@
-# 🕉️ IKS-Bot — Indian Knowledge System Conversational Assistant
+# 🕉️ Chanakya — Indian Knowledge System Conversational Assistant
 
 A warm, scholarly conversational guide to the **Indian Knowledge System (IKS)** — spanning Vedas, Ayurveda, Yoga, Sanskrit, Jyotisha, Natya Shastra, and more.
 
@@ -89,7 +89,7 @@ ChatBot/
 ├── app.py                  # Flask app — routes: / (UI), /chat (POST), /clear (POST)
 ├── config.py               # API keys, model config, safety keywords
 ├── prompts/
-│   └── system_prompt.txt   # The master system prompt (IKS-Bot's "brain")
+│   └── system_prompt.txt   # The master system prompt (Chanakya's "brain")
 ├── services/
 │   ├── conversation_service.py
 │   ├── safety_service.py

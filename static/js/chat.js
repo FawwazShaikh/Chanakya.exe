@@ -1,5 +1,5 @@
 /**
- * IKS-Bot — Chat Module
+ * Chanakya — Chat Module
  * Handles message sending, rendering, and conversation flow.
  * Includes per-message action row (Copy, Share, Edit) on user messages.
  */

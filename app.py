@@ -1,5 +1,5 @@
 """
-IKS-Bot — Flask Application
+Chanakya — Flask Application
 Main entry point: serves the UI and handles /chat API calls.
 Supports multiple LLM providers (Groq + Gemini) with automatic fallback.
 """
@@ -178,7 +178,7 @@ def truncate():
 if __name__ == "__main__":
     import os
     print()
-    print("IKS-Bot -- Indian Knowledge System Assistant")
+    print("Chanakya -- Indian Knowledge System Assistant")
     print("=" * 45)
 
     # Use HTTPS locally if pyopenssl is installed (needed for mic/clipboard)

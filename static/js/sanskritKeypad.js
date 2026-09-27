@@ -1,5 +1,5 @@
 /**
- * IKS-Bot — Sanskrit Keypad Module
+ * Chanakya — Sanskrit Keypad Module
  * A virtual on-screen Devanagari keyboard with two modes:
  *   1. Direct Devanagari key taps
  *   2. ITRANS transliteration (type Roman → get Devanagari live)

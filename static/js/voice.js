@@ -1,5 +1,5 @@
 /**
- * IKS-Bot — Voice Module
+ * Chanakya — Voice Module
  * Handles Speech-to-Text (mic input) and Text-to-Speech (bot replies).
  * Uses the browser's Web Speech API — zero backend cost.
  */

@@ -1,5 +1,5 @@
 """
-Safety service for IKS-Bot.
+Safety service for Chanakya.
 Provides lightweight guardrails:
   1. Flags Ayurveda symptom/remedy questions to append a medical disclaimer.
   2. Detects obviously off-topic requests as a backstop (the system prompt handles

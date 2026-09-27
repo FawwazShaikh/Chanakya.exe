@@ -1,5 +1,5 @@
 """
-Language detection service for IKS-Bot.
+Language detection service for Chanakya.
 Detects whether the user's message is in English, Hindi, Sanskrit, or Hinglish
 using Unicode range checks and keyword heuristics.
 """

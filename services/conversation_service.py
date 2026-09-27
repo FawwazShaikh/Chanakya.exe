@@ -1,5 +1,5 @@
 """
-Conversation service for IKS-Bot.
+Conversation service for Chanakya.
 Manages per-session conversation history in memory.
 """
 
